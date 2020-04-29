@@ -1,4 +1,4 @@
-[# .coveragerc to control coverage.py
+# .coveragerc to control coverage.py
 [run]
 branch = True
 
@@ -10,7 +10,7 @@ exclude_lines =
     raise NotImplementedError
 
     except FileNotFoundError as error:
-        pass
+
 
 ignore_errors = True
 
