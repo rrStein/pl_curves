@@ -63,9 +63,9 @@ def test_run_fail():
     with pytest.raises(SystemExit) as pytest_wrapped_e:
         run("test-input.tsv", "test.png", "test.tsv")
         
-        captured = capsys.readouterr()
-        errMsg = "Error: columns don't sum to 1\n"
-        assert captured == errMsg
+        # captured = capsys.readouterr()
+        # errMsg = "Error: columns don't sum to 1\n"
+        # assert captured == errMsg
     assert pytest_wrapped_e.type == SystemExit
     assert pytest_wrapped_e.value.code == 1
     

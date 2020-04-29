@@ -7,6 +7,11 @@ report]
 exclude_lines =
     if __name__ == .__main__.:
 
+    raise NotImplementedError
+
+    except FileNotFoundError as error:
+        pass
+
 ignore_errors = True
 
 [html]
