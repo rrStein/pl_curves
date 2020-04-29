@@ -6,7 +6,24 @@ report]
 
 exclude_lines =
     pragma: no cover
-    if __name__ == .__main__.:
+    if __name__ == "__main__":
+    # parse command line arguments
+    parser = argparse.ArgumentParser()
+    parser.add_argument('inputfile')
+    parser.add_argument('-g', '--graph', help='Graph file name',
+                        default='graph.png', required=False)
+    parser.add_argument('-o', '--output', help='Output data file name',
+                        required=False)
+
+    args = parser.parse_args()
+
+    if args.output is None:
+        args.output = args.inputfile + ".output.tsv"
+
+    print("Input file:", args.inputfile)
+    print("Output file:", args.output)
+    print("Graph file", args.graph)
+    sample_data = run(args.inputfile, args.graph, args.output)
 
     raise NotImplementedError
 
